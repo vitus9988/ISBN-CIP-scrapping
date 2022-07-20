@@ -50,7 +50,7 @@ def main():
 def issueUpload():
     seoul_timezone = timezone('Asia/Seoul')
     today = datetime.now(seoul_timezone)
-    tm = today.strftime('%Y-%m-%d %H:%M')
+    tm = today.strftime('%Y-%m-%d')
 
     uploadText = main()
 
