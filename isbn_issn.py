@@ -49,7 +49,7 @@ def issueUpload():
 
     uploadText = main()
 
-    access_token = os.environ['MY_GITHUB_TOKEN']
+    access_token = os.environ['ISBN_CIP_SECRET']
     g = Github(access_token)
     repo = g.get_user().get_repo('ISBN-CIP-scrapping')
     repo.create_issue(title=f"{tm} 발매(예정)일 목록", body=uploadText)
