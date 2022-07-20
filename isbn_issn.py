@@ -32,7 +32,7 @@ def main():
         soup = wc(f'https://www.nl.go.kr/seoji/contents/S80100000000.do?page={page}&pageUnit=100&schType=detail&sort=publish_predate+desc&f1=title&and1=AND&f2=author&and2=AND&f3=publisher&f5=isbn&f7=kdc&v8s={today}&v8e={today}&ebookYn=N')
         detail = soup.find_all('div','resultInfo')
 
-                for i in detail:
+        for i in detail:
             title = i.find('a').text.strip()
             # stat = [x.text.strip() for x in i.find('ul')]
             # stat = ' '.join(stat)
