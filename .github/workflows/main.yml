@@ -1,0 +1,29 @@
+name: Run Scraper - Update data
+
+on:
+  schedule:
+    - cron:  '*/10 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v1
+      with:
+          python-version: '3.x'
+          architecture: 'x64'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+        pip install beautifulsoup4
+        pip install pygithub
+        pip install lxml
+        pip install pytz
+    - name: Run Scraper & Make Issue
+      run: |
+        python "isbn_issn.py"
+      env:
+        MY_GITHUB_TOKEN: ${{ secrets.ISBN_CIP_SECRET }}
