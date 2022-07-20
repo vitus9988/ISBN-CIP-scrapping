@@ -39,7 +39,8 @@ def main():
             link = i.find('a').get('onclick')
             relink = re.findall(r'\d+', link)
             reurl = f"https://www.nl.go.kr/seoji/contents/S80100000000.do?schM=intgr_detail_view_isbn&page=1&pageUnit=100&schType=detail&sort=publish_predate+desc&f1=title&and1=AND&f2=author&and2=AND&f3=publisher&f5=isbn&f7=kdc&v8s={today}&v8e={today}&ebookYn=N&isbn={relink[0]}&cipId={relink[1]}%2C"
-            result += f"<a href={reurl}>" + title +"</a>"+"<br/>\n"
+            #result += f"<a href={reurl}>" + title +"</a>"+"<br/>\n"
+            result += f"[{title}]({reurl})\n"
         if f'{checker}.' in title:
             return result
         page += 1
