@@ -2,7 +2,7 @@ name: Run Scraper - Update data
 
 on:
   schedule:
-    - cron:  '0 9,18 * * *'
+    - cron:  '0 10,18 * * *'
 
 jobs:
   build:
